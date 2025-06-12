@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tömer 2025 Anıları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #fff;
+            position: relative;
+            touch-action: manipulation;
+        }
+        
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            perspective: 1000px;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            animation-duration: 120s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            transform: scale(1.1);
+            filter: brightness(0.9);
+        }
+        
+        /* Add loading placeholder for images */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0a192f, #1a365d);
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+        
+        .slide.loaded::before {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Image URLs */
+        .slide:nth-child(1) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/1_2025-06-11_18-48-40.jpg');
+            animation-name: fadeInOut1;
+        }
+        .slide:nth-child(2) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/2_2025-06-11_18-49-40.jpg');
+            animation-name: fadeInOut2;
+        }
+        .slide:nth-child(3) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/3_2025-06-11_18-50-08.jpg');
+            animation-name: fadeInOut3;
+        }
+        .slide:nth-child(4) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/4_2025-06-11_18-50-27.jpg');
+            animation-name: fadeInOut4;
+        }
+        .slide:nth-child(5) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/5_2025-06-11_18-50-41.jpg');
+            animation-name: fadeInOut5;
+        }
+        .slide:nth-child(6) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/6_2025-06-11_18-50-57.jpg');
+            animation-name: fadeInOut6;
+        }
+        .slide:nth-child(7) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/7_2025-06-11_18-51-21.jpg');
+            animation-name: fadeInOut7;
+        }
+        .slide:nth-child(8) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/8_2025-06-11_18-51-33.jpg');
+            animation-name: fadeInOut8;
+        }
+        .slide:nth-child(9) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/9_2025-06-11_18-51-45.jpg');
+            animation-name: fadeInOut9;
+        }
+        .slide:nth-child(10) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/10_2025-06-11_18-51-21.jpg');
+            animation-name: fadeInOut10;
+        }
+        .slide:nth-child(11) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/11_2025-06-11_18-53-31.jpg');
+            animation-name: fadeInOut11;
+        }
+        .slide:nth-child(12) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/12_2025-06-11_18-53-42.jpg');
+            animation-name: fadeInOut12;
+        }
+        .slide:nth-child(13) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/13_2025-06-11_18-54-05.jpg');
+            animation-name: fadeInOut13;
+        }
+        .slide:nth-child(14) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/14_2025-06-11_18-54-16.jpg');
+            animation-name: fadeInOut14;
+        }
+        .slide:nth-child(15) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/15_2025-06-11_18-54-40.jpg');
+            animation-name: fadeInOut15;
+        }
+        .slide:nth-child(16) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/16_2025-06-11_18-54-53.jpg');
+            animation-name: fadeInOut16;
+        }
+        .slide:nth-child(17) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/16_2025-06-11_18-55-10.jpg');
+            animation-name: fadeInOut17;
+        }
+        .slide:nth-child(18) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/17_2025-06-11_18-55-34.jpg');
+            animation-name: fadeInOut18;
+        }
+        .slide:nth-child(19) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/18_2025-06-11_18-55-44.jpg');
+            animation-name: fadeInOut19;
+        }
+        .slide:nth-child(20) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/19_2025-06-11_18-55-55.jpg');
+            animation-name: fadeInOut20;
+        }
+        .slide:nth-child(21) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/20_2025-06-11_18-56-09.jpg');
+            animation-name: fadeInOut21;
+        }
+        .slide:nth-child(22) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/21_2025-06-11_18-56-21.jpg');
+            animation-name: fadeInOut22;
+        }
+        .slide:nth-child(23) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/22_2025-06-11_18-56-38.jpg');
+            animation-name: fadeInOut23;
+        }
+        .slide:nth-child(24) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/23_2025-06-11_18-56-51.jpg');
+            animation-name: fadeInOut24;
+        }
+        .slide:nth-child(25) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/24_2025-06-11_18-59-56.jpg');
+            animation-name: fadeInOut25;
+        }
+        .slide:nth-child(26) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/25_2025-06-11_19-00-52.jpg');
+            animation-name: fadeInOut26;
+        }
+        .slide:nth-child(27) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/26_2025-06-11_19-02-11.jpg');
+            animation-name: fadeInOut27;
+        }
+        .slide:nth-child(28) { 
+            background-image: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/image-rubyfath/main/27_2025-06-11_19-03-20.jpg');
+            animation-name: fadeInOut28;
+        }
+        
+        /* Enhanced animations with zoom effect */
+        @keyframes fadeInOut1 {
+            0% { opacity: 0; transform: scale(1.1); }
+            3% { opacity: 1; transform: scale(1.05); }
+            6% { opacity: 1; transform: scale(1.0); }
+            9%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut2 {
+            6% { opacity: 0; transform: scale(1.1); }
+            7% { opacity: 1; transform: scale(1.05); }
+            8% { opacity: 1; transform: scale(1.0); }
+            9%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut3 {
+            9% { opacity: 0; transform: scale(1.1); }
+            10% { opacity: 1; transform: scale(1.05); }
+            11% { opacity: 1; transform: scale(1.0); }
+            12%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut4 {
+            12% { opacity: 0; transform: scale(1.1); }
+            13% { opacity: 1; transform: scale(1.05); }
+            14% { opacity: 1; transform: scale(1.0); }
+            15%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut5 {
+            15% { opacity: 0; transform: scale(1.1); }
+            16% { opacity: 1; transform: scale(1.05); }
+            17% { opacity: 1; transform: scale(1.0); }
+            18%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut6 {
+            18% { opacity: 0; transform: scale(1.1); }
+            19% { opacity: 1; transform: scale(1.05); }
+            20% { opacity: 1; transform: scale(1.0); }
+            21%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut7 {
+            21% { opacity: 0; transform: scale(1.1); }
+            22% { opacity: 1; transform: scale(1.05); }
+            23% { opacity: 1; transform: scale(1.0); }
+            24%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut8 {
+            24% { opacity: 0; transform: scale(1.1); }
+            25% { opacity: 1; transform: scale(1.05); }
+            26% { opacity: 1; transform: scale(1.0); }
+            27%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut9 {
+            27% { opacity: 0; transform: scale(1.1); }
+            28% { opacity: 1; transform: scale(1.05); }
+            29% { opacity: 1; transform: scale(1.0); }
+            30%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut10 {
+            30% { opacity: 0; transform: scale(1.1); }
+            31% { opacity: 1; transform: scale(1.05); }
+            32% { opacity: 1; transform: scale(1.0); }
+            33%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut11 {
+            33% { opacity: 0; transform: scale(1.1); }
+            34% { opacity: 1; transform: scale(1.05); }
+            35% { opacity: 1; transform: scale(1.0); }
+            36%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut12 {
+            36% { opacity: 0; transform: scale(1.1); }
+            37% { opacity: 1; transform: scale(1.05); }
+            38% { opacity: 1; transform: scale(1.0); }
+            39%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut13 {
+            39% { opacity: 0; transform: scale(1.1); }
+            40% { opacity: 1; transform: scale(1.05); }
+            41% { opacity: 1; transform: scale(1.0); }
+            42%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut14 {
+            42% { opacity: 0; transform: scale(1.1); }
+            43% { opacity: 1; transform: scale(1.05); }
+            44% { opacity: 1; transform: scale(1.0); }
+            45%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut15 {
+            45% { opacity: 0; transform: scale(1.1); }
+            46% { opacity: 1; transform: scale(1.05); }
+            47% { opacity: 1; transform: scale(1.0); }
+            48%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut16 {
+            48% { opacity: 0; transform: scale(1.1); }
+            49% { opacity: 1; transform: scale(1.05); }
+            50% { opacity: 1; transform: scale(1.0); }
+            51%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut17 {
+            51% { opacity: 0; transform: scale(1.1); }
+            52% { opacity: 1; transform: scale(1.05); }
+            53% { opacity: 1; transform: scale(1.0); }
+            54%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut18 {
+            54% { opacity: 0; transform: scale(1.1); }
+            55% { opacity: 1; transform: scale(1.05); }
+            56% { opacity: 1; transform: scale(1.0); }
+            57%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut19 {
+            57% { opacity: 0; transform: scale(1.1); }
+            58% { opacity: 1; transform: scale(1.05); }
+            59% { opacity: 1; transform: scale(1.0); }
+            60%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut20 {
+            60% { opacity: 0; transform: scale(1.1); }
+            61% { opacity: 1; transform: scale(1.05); }
+            62% { opacity: 1; transform: scale(1.0); }
+            63%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut21 {
+            63% { opacity: 0; transform: scale(1.1); }
+            64% { opacity: 1; transform: scale(1.05); }
+            65% { opacity: 1; transform: scale(1.0); }
+            66%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut22 {
+            66% { opacity: 0; transform: scale(1.1); }
+            67% { opacity: 1; transform: scale(1.05); }
+            68% { opacity: 1; transform: scale(1.0); }
+            69%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut23 {
+            69% { opacity: 0; transform: scale(1.1); }
+            70% { opacity: 1; transform: scale(1.05); }
+            71% { opacity: 1; transform: scale(1.0); }
+            72%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut24 {
+            72% { opacity: 0; transform: scale(1.1); }
+            73% { opacity: 1; transform: scale(1.05); }
+            74% { opacity: 1; transform: scale(1.0); }
+            75%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut25 {
+            75% { opacity: 0; transform: scale(1.1); }
+            76% { opacity: 1; transform: scale(1.05); }
+            77% { opacity: 1; transform: scale(1.0); }
+            78%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut26 {
+            78% { opacity: 0; transform: scale(1.1); }
+            79% { opacity: 1; transform: scale(1.05); }
+            80% { opacity: 1; transform: scale(1.0); }
+            81%, 100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut27 {
+            81% { opacity: 0; transform: scale(1.1); }
+            82% { opacity: 1; transform: scale(1.05); }
+            97% { opacity: 1; transform: scale(1.0); }
+            100% { opacity: 0; transform: scale(1.0); }
+        }
+        @keyframes fadeInOut28 {
+            97% { opacity: 0; transform: scale(1.1); }
+            98% { opacity: 1; transform: scale(1.05); }
+            99% { opacity: 1; transform: scale(1.0); }
+            100% { opacity: 0; transform: scale(1.0); }
+        }
+        
+        .message-container {
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .message-container.revealed {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .message-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateZ(50px);
+        }
+        
+        .message-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            to { text-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .message-section {
+            margin: 25px 0;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .message-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .important {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+            margin: 15px 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .highlight {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: block;
+            margin: 12px 0;
+        }
+        
+        .normal {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-top: 40px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+        }
+        
+        .signature.revealed {
+            opacity: 1;
+        }
+        
+        /* Particles for bomb effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ffd700;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+            z-index: 15;
+        }
+        
+        /* Background effects */
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ffd700;
+            border-radius: 3px;
+            animation: fall linear infinite;
+        }
+        
+        .confetti:nth-child(2n) { background: #ff6b6b; }
+        .confetti:nth-child(3n) { background: #4ecdc4; }
+        .confetti:nth-child(5n) { background: #ffd166; }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 30;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid #ffd700;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        button:hover {
+            background: rgba(255, 215, 0, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .sound-control {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .sound-control:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .sound-control i {
+            font-size: 28px;
+            color: white;
+        }
+        
+        /* Loading indicator */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a192f, #1a365d);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 5px solid #ffd700;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: #fff;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .message-title {
+                font-size: 3rem;
+            }
+            
+            .important {
+                font-size: 1.6rem;
+            }
+            
+            .highlight {
+                font-size: 1.3rem;
+            }
+            
+            .normal {
+                font-size: 1.1rem;
+            }
+            
+            .signature {
+                font-size: 2rem;
+            }
+            
+            button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .message-content {
+                padding: 30px 20px;
+            }
+            
+            .controls {
+                gap: 12px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .message-title {
+                font-size: 2.5rem;
+            }
+            
+            .important {
+                font-size: 1.4rem;
+            }
+            
+            .message-content {
+                padding: 25px 15px;
+                width: 95%;
+            }
+            
+            .sound-control {
+                width: 50px;
+                height: 50px;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .sound-control i {
+                font-size: 22px;
+            }
+            
+            .controls {
+                bottom: 15px;
+            }
+            
+            button {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .loading-text {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .controls {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            button {
+                width: 90%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">RUBYFATH Anıları Yüklüyor...</div>
+    </div>
+    
+    <div class="background-slideshow">
+        <!-- Slides will be generated with CSS animations -->
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+    
+    <div class="message-container">
+        <div class="message-content">
+            <div class="message-title">İçten Bir Teşekkür</div>
+            
+            <div class="message-section">
+                <span class="important">Sevgili öğretmenlerimize, bizi bugünlere getirdiğiniz için.</span>
+            </div>
+            
+            <div class="message-section">
+                <span class="highlight">Özveriniz, sabrınız ve yorulmak bilmeyen çabalarınız</span>
+                <span class="normal">bu yolculuk boyunca gözden kaçmadı.</span>
+            </div>
+            
+            <div class="message-section">
+                <span class="normal">Her adımda rehberliğiniz ve desteğiniz için minnettarız.</span>
+            </div>
+            
+            <div class="message-section">
+                <span class="highlight">Yaptığınız her şey için büyük ödüllere layık görülün.</span>
+            </div>
+            
+            <div class="message-section">
+                <span class="normal"> Hepinizi gerçekten özleyeceğim ve umarım gelecekte sizin gibi nazik ve ilham verici insanlarla tekrar karşılaşırım.</span>
+            </div>
+            
+            <div class="message-section">
+                <span class="important">Bir kez daha teşekkür ederim ve şimdilik hoşçakalın🙏🙏🙏.</span>
+            </div>
+            
+            <div class="signature">- Tömer Öğrenciler 2025</div>
+        </div>
+    </div>
+    
+    <div class="particles"></div>
+    <div class="background-effects"></div>
+    
+    <div class="controls">
+        <button id="replayBtn"><i class="fas fa-redo"></i> Animasyonu Tekrarla</button>
+        <button id="skipBtn"><i class="fas fa-fast-forward"></i> Mesaja Geç</button>
+    </div>
+    
+    <div class="sound-control">
+        <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/rubyfath-advice/main/D%C3%9CNYANIN%20B%C3%9CT%C3%9CN%20RENKLER%C4%B0%20(1).mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageContainer = document.querySelector('.message-container');
+            const messageSections = document.querySelectorAll('.message-section');
+            const signature = document.querySelector('.signature');
+            const particlesContainer = document.querySelector('.particles');
+            const backgroundEffects = document.querySelector('.background-effects');
+            const bgMusic = document.getElementById('bgMusic');
+            const soundControl = document.querySelector('.sound-control');
+            const replayBtn = document.getElementById('replayBtn');
+            const skipBtn = document.getElementById('skipBtn');
+            const loadingScreen = document.querySelector('.loading');
+            const slides = document.querySelectorAll('.slide');
+            let musicPlaying = false;
+            let imagesLoaded = 0;
+            const totalImages = slides.length;
+            
+            // Preload images and mark as loaded
+            slides.forEach(slide => {
+                const img = new Image();
+                img.src = slide.style.backgroundImage.replace(/url\(['"]?([^'"]*)['"]?\)/, '$1');
+                img.onload = () => {
+                    imagesLoaded++;
+                    slide.classList.add('loaded');
+                    if(imagesLoaded === totalImages) {
+                        // All images loaded
+                        setTimeout(() => {
+                            loadingScreen.classList.add('hidden');
+                        }, 500);
+                    }
+                };
+                img.onerror = () => {
+                    imagesLoaded++;
+                    slide.classList.add('loaded');
+                    if(imagesLoaded === totalImages) {
+                        setTimeout(() => {
+                            loadingScreen.classList.add('hidden');
+                        }, 500);
+                    }
+                };
+            });
+            
+            // Create background confetti
+            function createConfetti() {
+                const confettiCount = 80;
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                    confetti.style.animationDelay = `${Math.random() * 5}s`;
+                    confetti.style.opacity = Math.random() * 0.7 + 0.3;
+                    backgroundEffects.appendChild(confetti);
+                }
+            }
+            
+            // Bomb effect with particles
+            function startBombEffect() {
+                // Create particles
+                const particleCount = 200;
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // Random position around center
+                    const angle = Math.random() * Math.PI * 2;
+                    const radius = Math.random() * 100;
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    
+                    particle.style.left = `${x}px`;
+                    particle.style.top = `${y}px`;
+                    
+                    // Random size
+                    const size = Math.random() * 12 + 6;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    // Random color
+                    const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#ffd166', '#ffffff'];
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    particlesContainer.appendChild(particle);
+                    
+                    // Animate particle
+                    const endX = centerX + Math.cos(angle) * (radius + Math.random() * 400);
+                    const endY = centerY + Math.sin(angle) * (radius + Math.random() * 400);
+                    
+                    const animation = particle.animate(
+                        [
+                            { transform: `translate(0, 0) scale(1)`, opacity: 1 },
+                            { transform: `translate(${endX - x}px, ${endY - y}px) scale(0.2)`, opacity: 0 }
+                        ],
+                        {
+                            duration: Math.random() * 1000 + 1500,
+                            easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                        }
+                    );
+                    
+                    animation.onfinish = () => {
+                        particle.remove();
+                    };
+                }
+                
+                // Reveal message container
+                messageContainer.classList.add('revealed');
+                
+                // Reveal message sections with delay
+                setTimeout(() => {
+                    messageSections.forEach((section, index) => {
+                        setTimeout(() => {
+                            section.classList.add('revealed');
+                        }, index * 600);
+                    });
+                    
+                    // Reveal signature last
+                    setTimeout(() => {
+                        signature.classList.add('revealed');
+                    }, messageSections.length * 600);
+                }, 500);
+            }
+            
+            // Toggle music
+            function toggleMusic() {
+                if (musicPlaying) {
+                    bgMusic.pause();
+                    soundControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                } else {
+                    bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+                    soundControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }
+                musicPlaying = !musicPlaying;
+            }
+            
+            // Replay animation
+            function replayAnimation() {
+                // Hide message container
+                messageContainer.classList.remove('revealed');
+                
+                // Hide message sections
+                messageSections.forEach(section => {
+                    section.classList.remove('revealed');
+                });
+                
+                // Hide signature
+                signature.classList.remove('revealed');
+                
+                // Clear particles
+                particlesContainer.innerHTML = '';
+                
+                // Reset background animations
+                const slides = document.querySelectorAll('.slide');
+                slides.forEach((slide, index) => {
+                    slide.style.animation = 'none';
+                    void slide.offsetWidth; // Trigger reflow
+                    slide.style.animation = `fadeInOut${index+1} 30s forwards`;
+                });
+                
+                // Restart bomb effect after slideshow
+                setTimeout(startBombEffect, 30000);
+            }
+            
+            // Skip to message
+            function skipToMessage() {
+                // Clear particles
+                particlesContainer.innerHTML = '';
+                
+                // Show message
+                messageContainer.classList.add('revealed');
+                
+                // Reveal message sections with delay
+                setTimeout(() => {
+                    messageSections.forEach((section, index) => {
+                        setTimeout(() => {
+                            section.classList.add('revealed');
+                        }, index * 600);
+                    });
+                    
+                    // Reveal signature last
+                    setTimeout(() => {
+                        signature.classList.add('revealed');
+                    }, messageSections.length * 600);
+                }, 500);
+            }
+            
+            // Event listeners
+            soundControl.addEventListener('click', toggleMusic);
+            replayBtn.addEventListener('click', replayAnimation);
+            skipBtn.addEventListener('click', skipToMessage);
+            
+            // Start the animation
+            createConfetti();
+            setTimeout(startBombEffect, 30000); // Start bomb effect after 30s (slideshow duration)
+            
+            // Try to autoplay music with user interaction
+            document.body.addEventListener('click', function initAudio() {
+                if (!musicPlaying) {
+                    bgMusic.play().then(() => {
+                        musicPlaying = true;
+                        soundControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    }).catch(e => {
+                        console.log("Autoplay prevented:", e);
+                    });
+                    document.body.removeEventListener('click', initAudio);
+                }
+            });
+            
+            // Parallax effect for message container
+            document.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth - e.pageX * 2) / 50;
+                const y = (window.innerHeight - e.pageY * 2) / 50;
+                messageContainer.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+            });
+        });
+    </script>
+</body>
+</html>
